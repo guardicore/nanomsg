@@ -168,29 +168,6 @@ static void nn_worker_routine (void *arg)
             NN_WORKER_MAX_EVENTS, &count, timeout < 0 ? INFINITE : timeout,
             FALSE);
         if (nn_slow (!brc && GetLastError () == WAIT_TIMEOUT)) {
-
-			/* NOTE: tried GetHandleInformation initially, but it didn't work */
-			/* FIXME: only do this when it's a named pipe. I have not seen an error when we abuse a SOCKET and do a PeekNamedPipe on it, but we shouldn't do that. */
-			brc = PeekNamedPipe (self->p, NULL, 0, NULL, NULL, NULL);
-			if ( !brc ) {
-				win_err = GetLastError ();
-				nn_assert (win_err == ERROR_INVALID_HANDLE || win_err == ERROR_BAD_PIPE);
-#if 0
-				/* GetQueuedCompletionStatusEx filled up the list of entries, even though it's a timeout */
-				nn_assert (count > 0);
-				for (i =0; i != count; ++i) {
-					nn_assert (entries [i].lpOverlapped!=NULL);
-					nn_assert ((entries [i].Internal & 0xc0000000) != 0); /* GetQueuedCompletionStatusEx detects errors even when raising timeout */
-					op = nn_cont (entries [i].lpOverlapped, struct nn_worker_op, olpd);
-					nn_ctx_enter (op->owner->ctx);
-	                nn_assert (op->state == NN_WORKER_OP_STATE_IDLE);
-					/* FIXME: This will fail - the pipe handle is already in NN_USOCK_STATE_DONE */
-					nn_fsm_feed (op->owner, op->src, NN_WORKER_OP_ERROR, op);
-					nn_ctx_leave (op->owner->ctx);
-				}
-#endif
-			}
-
             continue;
 		}
         win_assert (brc);
