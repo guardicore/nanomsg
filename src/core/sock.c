@@ -580,6 +580,14 @@ int nn_sock_send (struct nn_sock *self, struct nn_msg *msg, int flags)
             return rc;
         }
 
+		/* Check number of current connections so we don't wait forever*/
+		if(nn_fast (rc == -EAGAIN) && nn_fast(self->statistics.current_connections == 0)) {
+			nn_msg_term (msg); //deallocate the message
+			nn_ctx_leave (&self->ctx);
+			errno = ENOTCONN;//really have to look for a proper error code to return since ENOTCONN might be misunderstood to a the sending socket to be not connected
+			return 0; 
+		}
+
         /*  If the message cannot be sent at the moment and the send call
             is non-blocking, return immediately. */
         if (nn_fast (flags & NN_DONTWAIT)) {
