@@ -91,6 +91,7 @@ tests/term
 *.ipch
 *.cmake
 *.opensdf
+*.sln
 CMakeCache.*
 Debug
 Release
