@@ -27,9 +27,7 @@
 
 #include "testutil.h"
 
-/*  Tests IPC transport. */
-
-#define SOCKET_ADDRESS "ipc://test.ipc"
+#define SOCKET_ADDRESS "ipc://test_flood.ipc"
 
 #define BATCH_SEND 10
 
@@ -58,7 +56,7 @@ int main ()
 	for (i=0; i<BATCH_SEND; i++) {
 		if (i==BATCH_SEND-1) {
 			/* Wait before sending the last one. */
-			nn_sleep(50);
+			nn_sleep (50);
 		}
 		rc = nn_send (pub, &counter, sizeof(counter), 0);
 		nn_assert (rc == sizeof(counter));
@@ -69,7 +67,7 @@ int main ()
 	for (i=0; i<BATCH_SEND; i++) {
 		rc = nn_recv (sub, &recv_tmp, sizeof(recv_tmp), 0);
 		nn_assert (rc == sizeof(recv_tmp));
-		/* Will get the first one, and the last one we waited on. Everything in between dropped. */
+		/* Before fix, would only see first and last message. */
 		nn_assert (recv_expect == recv_tmp);
 		recv_expect++;
 	}
