@@ -255,9 +255,6 @@ if (WIN32)
     )
 endif ()
 
-#add_library (nanomsg SHARED ${NN_SOURCES})
-#add_definitions (-DNN_EXPORTS)
-
 add_library (nanomsg STATIC ${NN_SOURCES})
 add_definitions (-DNN_NO_EXPORTS)
 
@@ -268,12 +265,14 @@ target_link_libraries (nanomsg ws2_32)
 target_link_libraries (nanomsg Mswsock.lib)
 target_link_libraries (nanomsg Advapi32.lib)
 
-set(CMAKE_C_FLAGS_DEBUG "/D_DEBUG /MTd /Zi /Ob0 /Od /RTC1")
-set(CMAKE_C_FLAGS_MINSIZEREL     "/MT /O1 /Ob1 /D NDEBUG")
-set(CMAKE_C_FLAGS_RELEASE        "/MT /O2 /Ob2 /D NDEBUG")
-set(CMAKE_C_FLAGS_RELWITHDEBINFO "/MT /Zi /O2 /Ob1 /D NDEBUG")
+set(CMAKE_C_FLAGS_DEBUG          "/D_DEBUG /MTd /Zi /Ob0 /Od /RTC1" )
+set(CMAKE_C_FLAGS_MINSIZEREL     "/MT /O1 /Ob1 /D NDEBUG"           )
+set(CMAKE_C_FLAGS_RELEASE        "/MT /O2 /Ob2 /D NDEBUG"           )
+set(CMAKE_C_FLAGS_RELWITHDEBINFO "/MT /Zi /O2 /Ob1 /D NDEBUG"       )
+
 
 install(TARGETS nanomsg
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin)
+

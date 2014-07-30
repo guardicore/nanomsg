@@ -47,6 +47,8 @@ endif ()
 #  Build the library itself.
 
 add_subdirectory (src)
+add_subdirectory (nanomsg_std)
+add_subdirectory (nanomsg64_std)
 
 #  Build the tools
 
