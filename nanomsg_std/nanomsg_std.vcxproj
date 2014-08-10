@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{99A7794C-4549-4605-9E4E-481106525421}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>nanomsg_std</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BR\nanomsg\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\BR\nanomsg\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nanomsg_std.dir\Debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nanomsg_std.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">nanomsg_std</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nanomsg_std</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BR\nanomsg\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\BR\nanomsg\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nanomsg_std.dir\Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nanomsg_std.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">nanomsg_std</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nanomsg_std</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\BR\nanomsg\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\BR\nanomsg\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">nanomsg_std.dir\MinSizeRel\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">nanomsg_std.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">nanomsg_std</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">nanomsg_std</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BR\nanomsg\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\BR\nanomsg\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">nanomsg_std.dir\RelWithDebInfo\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">nanomsg_std.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">nanomsg_std</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">nanomsg_std</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(TargetDir)/$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NN_HAVE_WINDOWS;_CRT_SECURE_NO_WARNINGS;NN_NO_EXPORTS;NN_USE_LITERAL_IFADDR;UNICODE;_UNICODE;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/BR/nanomsg/nanomsg_std/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\CMake3\bin\cmake.exe" -HC:/BR/nanomsg -BC:/BR/nanomsg --check-stamp-file C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/BR/nanomsg/nanomsg_std/CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;C:\BR\nanomsg\nanomsg_std\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\BR\nanomsg\nanomsg_std\CMakeFiles\generate.stamp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\nn.h" />
+    <ClInclude Include="..\src\inproc.h" />
+    <ClInclude Include="..\src\ipc.h" />
+    <ClInclude Include="..\src\tcp.h" />
+    <ClInclude Include="..\src\pair.h" />
+    <ClInclude Include="..\src\pubsub.h" />
+    <ClInclude Include="..\src\reqrep.h" />
+    <ClInclude Include="..\src\pipeline.h" />
+    <ClInclude Include="..\src\survey.h" />
+    <ClInclude Include="..\src\bus.h" />
+    <ClInclude Include="..\src\core\ep.h" />
+    <ClInclude Include="..\src\core\global.h" />
+    <ClInclude Include="..\src\core\sock.h" />
+    <ClInclude Include="..\src\aio\ctx.h" />
+    <ClInclude Include="..\src\aio\fsm.h" />
+    <ClInclude Include="..\src\aio\poller.h" />
+    <ClInclude Include="..\src\aio\poller_epoll.h" />
+    <ClInclude Include="..\src\aio\poller_kqueue.h" />
+    <ClInclude Include="..\src\aio\poller_poll.h" />
+    <ClInclude Include="..\src\aio\pool.h" />
+    <ClInclude Include="..\src\aio\timer.h" />
+    <ClInclude Include="..\src\aio\timerset.h" />
+    <ClInclude Include="..\src\aio\usock.h" />
+    <ClInclude Include="..\src\aio\usock_posix.h" />
+    <ClInclude Include="..\src\aio\usock_win.h" />
+    <ClInclude Include="..\src\aio\worker.h" />
+    <ClInclude Include="..\src\aio\worker_posix.h" />
+    <ClInclude Include="..\src\aio\worker_win.h" />
+    <ClInclude Include="..\src\utils\alloc.h" />
+    <ClInclude Include="..\src\utils\atomic.h" />
+    <ClInclude Include="..\src\utils\attr.h" />
+    <ClInclude Include="..\src\utils\chunk.h" />
+    <ClInclude Include="..\src\utils\chunkref.h" />
+    <ClInclude Include="..\src\utils\clock.h" />
+    <ClInclude Include="..\src\utils\closefd.h" />
+    <ClInclude Include="..\src\utils\cont.h" />
+    <ClInclude Include="..\src\utils\efd.h" />
+    <ClInclude Include="..\src\utils\efd_eventfd.h" />
+    <ClInclude Include="..\src\utils\efd_pipe.h" />
+    <ClInclude Include="..\src\utils\efd_socketpair.h" />
+    <ClInclude Include="..\src\utils\efd_win.h" />
+    <ClInclude Include="..\src\utils\err.h" />
+    <ClInclude Include="..\src\utils\fast.h" />
+    <ClInclude Include="..\src\utils\fd.h" />
+    <ClInclude Include="..\src\utils\glock.h" />
+    <ClInclude Include="..\src\utils\hash.h" />
+    <ClInclude Include="..\src\utils\int.h" />
+    <ClInclude Include="..\src\utils\list.h" />
+    <ClInclude Include="..\src\utils\msg.h" />
+    <ClInclude Include="..\src\utils\mutex.h" />
+    <ClInclude Include="..\src\utils\queue.h" />
+    <ClInclude Include="..\src\utils\random.h" />
+    <ClInclude Include="..\src\utils\sem.h" />
+    <ClInclude Include="..\src\utils\sleep.h" />
+    <ClInclude Include="..\src\utils\thread.h" />
+    <ClInclude Include="..\src\utils\thread_posix.h" />
+    <ClInclude Include="..\src\utils\thread_win.h" />
+    <ClInclude Include="..\src\utils\wire.h" />
+    <ClInclude Include="..\src\protocols\utils\dist.h" />
+    <ClInclude Include="..\src\protocols\utils\excl.h" />
+    <ClInclude Include="..\src\protocols\utils\fq.h" />
+    <ClInclude Include="..\src\protocols\utils\lb.h" />
+    <ClInclude Include="..\src\protocols\utils\priolist.h" />
+    <ClInclude Include="..\src\protocols\bus\bus.h" />
+    <ClInclude Include="..\src\protocols\bus\xbus.h" />
+    <ClInclude Include="..\src\protocols\pipeline\push.h" />
+    <ClInclude Include="..\src\protocols\pipeline\pull.h" />
+    <ClInclude Include="..\src\protocols\pipeline\xpull.h" />
+    <ClInclude Include="..\src\protocols\pipeline\xpush.h" />
+    <ClInclude Include="..\src\protocols\pair\pair.h" />
+    <ClInclude Include="..\src\protocols\pair\xpair.h" />
+    <ClInclude Include="..\src\protocols\pubsub\pub.h" />
+    <ClInclude Include="..\src\protocols\pubsub\sub.h" />
+    <ClInclude Include="..\src\protocols\pubsub\trie.h" />
+    <ClInclude Include="..\src\protocols\pubsub\xpub.h" />
+    <ClInclude Include="..\src\protocols\pubsub\xsub.h" />
+    <ClInclude Include="..\src\protocols\reqrep\req.h" />
+    <ClInclude Include="..\src\protocols\reqrep\rep.h" />
+    <ClInclude Include="..\src\protocols\reqrep\xrep.h" />
+    <ClInclude Include="..\src\protocols\reqrep\xreq.h" />
+    <ClInclude Include="..\src\protocols\survey\respondent.h" />
+    <ClInclude Include="..\src\protocols\survey\surveyor.h" />
+    <ClInclude Include="..\src\protocols\survey\xrespondent.h" />
+    <ClInclude Include="..\src\protocols\survey\xsurveyor.h" />
+    <ClInclude Include="..\src\transports\utils\backoff.h" />
+    <ClInclude Include="..\src\transports\utils\dns.h" />
+    <ClInclude Include="..\src\transports\utils\dns_getaddrinfo.h" />
+    <ClInclude Include="..\src\transports\utils\dns_getaddrinfo_a.h" />
+    <ClInclude Include="..\src\transports\utils\iface.h" />
+    <ClInclude Include="..\src\transports\utils\literal.h" />
+    <ClInclude Include="..\src\transports\utils\port.h" />
+    <ClInclude Include="..\src\transports\utils\streamhdr.h" />
+    <ClInclude Include="..\src\transports\inproc\binproc.h" />
+    <ClInclude Include="..\src\transports\inproc\cinproc.h" />
+    <ClInclude Include="..\src\transports\inproc\inproc.h" />
+    <ClInclude Include="..\src\transports\inproc\ins.h" />
+    <ClInclude Include="..\src\transports\inproc\msgqueue.h" />
+    <ClInclude Include="..\src\transports\inproc\sinproc.h" />
+    <ClInclude Include="..\src\transports\ipc\aipc.h" />
+    <ClInclude Include="..\src\transports\ipc\bipc.h" />
+    <ClInclude Include="..\src\transports\ipc\cipc.h" />
+    <ClInclude Include="..\src\transports\ipc\ipc.h" />
+    <ClInclude Include="..\src\transports\ipc\sipc.h" />
+    <ClInclude Include="..\src\transports\tcp\atcp.h" />
+    <ClInclude Include="..\src\transports\tcp\btcp.h" />
+    <ClInclude Include="..\src\transports\tcp\ctcp.h" />
+    <ClInclude Include="..\src\transports\tcp\stcp.h" />
+    <ClInclude Include="..\src\transports\tcp\tcp.h" />
+    <ClInclude Include="..\src\utils\win.h" />
+    <ClCompile Include="..\src\core\ep.c" />
+    <ClCompile Include="..\src\core\epbase.c" />
+    <ClCompile Include="..\src\core\global.c" />
+    <ClCompile Include="..\src\core\pipe.c" />
+    <ClCompile Include="..\src\core\poll.c" />
+    <ClCompile Include="..\src\core\sock.c" />
+    <ClCompile Include="..\src\core\sockbase.c" />
+    <ClCompile Include="..\src\core\device.c" />
+    <ClCompile Include="..\src\core\symbol.c" />
+    <ClCompile Include="..\src\aio\ctx.c" />
+    <ClCompile Include="..\src\aio\fsm.c" />
+    <ClCompile Include="..\src\aio\poller.c" />
+    <ClCompile Include="..\src\aio\pool.c" />
+    <ClCompile Include="..\src\aio\timer.c" />
+    <ClCompile Include="..\src\aio\timerset.c" />
+    <ClCompile Include="..\src\aio\usock.c" />
+    <ClCompile Include="..\src\aio\worker.c" />
+    <ClCompile Include="..\src\utils\alloc.c" />
+    <ClCompile Include="..\src\utils\atomic.c" />
+    <ClCompile Include="..\src\utils\chunk.c" />
+    <ClCompile Include="..\src\utils\chunkref.c" />
+    <ClCompile Include="..\src\utils\clock.c" />
+    <ClCompile Include="..\src\utils\closefd.c" />
+    <ClCompile Include="..\src\utils\efd.c" />
+    <ClCompile Include="..\src\utils\err.c" />
+    <ClCompile Include="..\src\utils\glock.c" />
+    <ClCompile Include="..\src\utils\hash.c" />
+    <ClCompile Include="..\src\utils\list.c" />
+    <ClCompile Include="..\src\utils\msg.c" />
+    <ClCompile Include="..\src\utils\mutex.c" />
+    <ClCompile Include="..\src\utils\queue.c" />
+    <ClCompile Include="..\src\utils\random.c" />
+    <ClCompile Include="..\src\utils\sem.c" />
+    <ClCompile Include="..\src\utils\sleep.c" />
+    <ClCompile Include="..\src\utils\thread.c" />
+    <ClCompile Include="..\src\utils\wire.c" />
+    <ClCompile Include="..\src\protocols\utils\dist.c" />
+    <ClCompile Include="..\src\protocols\utils\excl.c" />
+    <ClCompile Include="..\src\protocols\utils\fq.c" />
+    <ClCompile Include="..\src\protocols\utils\lb.c" />
+    <ClCompile Include="..\src\protocols\utils\priolist.c" />
+    <ClCompile Include="..\src\protocols\bus\bus.c" />
+    <ClCompile Include="..\src\protocols\bus\xbus.c" />
+    <ClCompile Include="..\src\protocols\pipeline\push.c" />
+    <ClCompile Include="..\src\protocols\pipeline\pull.c" />
+    <ClCompile Include="..\src\protocols\pipeline\xpull.c" />
+    <ClCompile Include="..\src\protocols\pipeline\xpush.c" />
+    <ClCompile Include="..\src\protocols\pair\pair.c" />
+    <ClCompile Include="..\src\protocols\pair\xpair.c" />
+    <ClCompile Include="..\src\protocols\pubsub\pub.c" />
+    <ClCompile Include="..\src\protocols\pubsub\sub.c" />
+    <ClCompile Include="..\src\protocols\pubsub\trie.c" />
+    <ClCompile Include="..\src\protocols\pubsub\xpub.c" />
+    <ClCompile Include="..\src\protocols\pubsub\xsub.c" />
+    <ClCompile Include="..\src\protocols\reqrep\req.c" />
+    <ClCompile Include="..\src\protocols\reqrep\rep.c" />
+    <ClCompile Include="..\src\protocols\reqrep\xrep.c" />
+    <ClCompile Include="..\src\protocols\reqrep\xreq.c" />
+    <ClCompile Include="..\src\protocols\survey\respondent.c" />
+    <ClCompile Include="..\src\protocols\survey\surveyor.c" />
+    <ClCompile Include="..\src\protocols\survey\xrespondent.c" />
+    <ClCompile Include="..\src\protocols\survey\xsurveyor.c" />
+    <ClCompile Include="..\src\transports\utils\backoff.c" />
+    <ClCompile Include="..\src\transports\utils\dns.c" />
+    <ClCompile Include="..\src\transports\utils\iface.c" />
+    <ClCompile Include="..\src\transports\utils\literal.c" />
+    <ClCompile Include="..\src\transports\utils\port.c" />
+    <ClCompile Include="..\src\transports\utils\streamhdr.c" />
+    <ClCompile Include="..\src\transports\inproc\binproc.c" />
+    <ClCompile Include="..\src\transports\inproc\cinproc.c" />
+    <ClCompile Include="..\src\transports\inproc\inproc.c" />
+    <ClCompile Include="..\src\transports\inproc\ins.c" />
+    <ClCompile Include="..\src\transports\inproc\msgqueue.c" />
+    <ClCompile Include="..\src\transports\inproc\sinproc.c" />
+    <ClCompile Include="..\src\transports\ipc\aipc.c" />
+    <ClCompile Include="..\src\transports\ipc\bipc.c" />
+    <ClCompile Include="..\src\transports\ipc\cipc.c" />
+    <ClCompile Include="..\src\transports\ipc\ipc.c" />
+    <ClCompile Include="..\src\transports\ipc\sipc.c" />
+    <ClCompile Include="..\src\transports\tcp\atcp.c" />
+    <ClCompile Include="..\src\transports\tcp\btcp.c" />
+    <ClCompile Include="..\src\transports\tcp\ctcp.c" />
+    <ClCompile Include="..\src\transports\tcp\stcp.c" />
+    <ClCompile Include="..\src\transports\tcp\tcp.c" />
+    <None Include="..\src\aio\poller_epoll.inc" />
+    <None Include="..\src\aio\poller_kqueue.inc" />
+    <None Include="..\src\aio\poller_poll.inc" />
+    <None Include="..\src\aio\usock_posix.inc" />
+    <None Include="..\src\aio\usock_win.inc" />
+    <None Include="..\src\aio\worker_posix.inc" />
+    <None Include="..\src\aio\worker_win.inc" />
+    <None Include="..\src\utils\efd_eventfd.inc" />
+    <None Include="..\src\utils\efd_pipe.inc" />
+    <None Include="..\src\utils\efd_socketpair.inc" />
+    <None Include="..\src\utils\efd_win.inc" />
+    <None Include="..\src\utils\thread_posix.inc" />
+    <None Include="..\src\utils\thread_win.inc" />
+    <None Include="..\src\transports\utils\dns_getaddrinfo.inc" />
+    <None Include="..\src\transports\utils\dns_getaddrinfo_a.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/BR/nanomsg/ZERO_CHECK.vcxproj">
+      <Project>F25C2349-8AF8-43C6-AD20-97619926FCE3</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -83,15 +83,12 @@ tests/trie
 tests/zerocopy
 tests/term
 *.dir
-*.vcxproj
-*.vcxproj.filters
 *.vcxproj.user
 *.sdf
 *.suo
 *.ipch
 *.cmake
 *.opensdf
-*.sln
 CMakeCache.*
 Debug
 Release
