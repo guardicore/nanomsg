@@ -799,7 +799,11 @@ static void nn_sock_shutdown (struct nn_fsm *self, int src, int type,
 
     if (nn_slow (src == NN_FSM_ACTION && type == NN_FSM_STOP)) {
         nn_assert (sock->state == NN_SOCK_STATE_ACTIVE ||
-            sock->state == NN_SOCK_STATE_ZOMBIE);
+            sock->state == NN_SOCK_STATE_ZOMBIE ||
+			/* Internal reference: PORT-209 PORT-211 */
+			/* Multiple shutdown calls? Should skip this block maybe? */
+			sock->state == NN_SOCK_STATE_STOPPING_EPS
+			);
 
         /*  Close sndfd and rcvfd. This should make any current
             select/poll using SNDFD and/or RCVFD exit. */
