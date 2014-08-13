@@ -59,7 +59,11 @@ int nn_efd_init (struct nn_efd *self)
         crossing the process boundary. 
         CAUTION: This critical section has machine-wide scope. Thus, it must
         be properly exited even before crashing the process by an assertion. */
+#ifdef UNICODE
+    sync = CreateEvent (&sa, FALSE, TRUE, L"Global\\nanomsg-port-sync");
+#else
     sync = CreateEvent (&sa, FALSE, TRUE, "Global\\nanomsg-port-sync");
+#endif
     win_assert (sync != NULL);
 
     /*  Enter the critical section. */
