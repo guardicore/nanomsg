@@ -815,12 +815,12 @@ static void nn_sock_shutdown (struct nn_fsm *self, int src, int type,
     sock = nn_cont (self, struct nn_sock, fsm);
 
     if (nn_slow (src == NN_FSM_ACTION && type == NN_FSM_STOP)) {
-        nn_assert (sock->state == NN_SOCK_STATE_ACTIVE ||
-            sock->state == NN_SOCK_STATE_ZOMBIE ||
-			/* Internal reference: PORT-209 PORT-211 */
-			/* Multiple shutdown calls? Should skip this block maybe? */
-			sock->state == NN_SOCK_STATE_STOPPING_EPS
-			);
+//		nn_assert (sock->state == NN_SOCK_STATE_ACTIVE ||
+//			sock->state == NN_SOCK_STATE_ZOMBIE);
+		if ( sock->state != NN_SOCK_STATE_ACTIVE &&
+			sock->state != NN_SOCK_STATE_ZOMBIE ) {
+				nn_err_log ("nn_sock_shutdown: state %d src %d type %d\n", sock->state, src, type);
+		}
 
         /*  Close sndfd and rcvfd. This should make any current
             select/poll using SNDFD and/or RCVFD exit. */
@@ -856,7 +856,7 @@ static void nn_sock_shutdown (struct nn_fsm *self, int src, int type,
 				src == 0, type == 33988
 				The sdeps list isn't empty, doesn't contain the item, but just doing an early return will let the test finish successfully.
 			*/
-			fprintf (stderr, "nn_sock_shutdown: unexpected fsm event src %d type %d\n", src, type);
+			nn_err_log ("nn_sock_shutdown: unexpected fsm event src %d type %d\n", src, type);
 			return;
 		} else {
 			ep = (struct nn_ep*) srcptr;
