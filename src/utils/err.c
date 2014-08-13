@@ -186,3 +186,10 @@ void nn_win_error (int err, char *buf, size_t bufsize)
 
 #endif
 
+void nn_err_log ( const char * fmt, ... ) {
+	va_list argp;
+	va_start (argp, fmt);
+	vfprintf (stderr, fmt, argp);
+	va_end (argp);
+	fflush (stderr);
+}
