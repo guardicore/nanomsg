@@ -28,7 +28,7 @@
 #include "testutil.h"
 
 /* This will hang both on Windows and OSX */
-#define SOCKET_ADDRESS "ipc://test.ipc"
+#define SOCKET_ADDRESS "ipc://ipc_pub_disconnect.ipc"
 
 /* This will hang on Windows, but work on OSX */
 /* #define SOCKET_ADDRESS "tcp://0.0.0.0:8861" */
