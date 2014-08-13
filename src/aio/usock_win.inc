@@ -339,7 +339,7 @@ void nn_usock_connect (struct nn_usock *self, const struct sockaddr *addr,
         nn_assert(nbytes == sizeof(pconnectex));
 
         /*  Connect itself. */
-        brc = pconnectex(self->s, (struct sockaddr*) addr, addrlen,
+        brc = pconnectex(self->s, (struct sockaddr*) addr, (int)addrlen,
             NULL, 0, NULL, &self->out.olpd);        
         winerror = brc ? ERROR_SUCCESS : WSAGetLastError();
     }
@@ -398,7 +398,7 @@ void nn_usock_send (struct nn_usock *self, const struct nn_iovec *iov,
             memcpy ((char*)(self->pipesendbuf) + idx, iov [i].iov_base, iov [i].iov_len);
             idx += iov [i].iov_len;
         }
-        brc = WriteFile (self->p, self->pipesendbuf, len, NULL, &self->out.olpd);
+        brc = WriteFile (self->p, self->pipesendbuf, (DWORD)len, NULL, &self->out.olpd);
         if (nn_fast (brc || GetLastError() == ERROR_IO_PENDING)) {
             nn_worker_op_start (&self->out, 0);
             return;
@@ -444,7 +444,7 @@ void nn_usock_recv (struct nn_usock *self, void *buf, size_t len)
     wflags = MSG_WAITALL;
     memset (&self->in.olpd, 0, sizeof (self->in.olpd));
     if (self->domain == AF_UNIX) {
-        brc = ReadFile(self->p, buf, len, NULL, &self->in.olpd);
+        brc = ReadFile(self->p, buf, (DWORD)len, NULL, &self->in.olpd);
         error = brc ? ERROR_SUCCESS : GetLastError();
     }
     else {
