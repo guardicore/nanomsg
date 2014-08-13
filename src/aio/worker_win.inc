@@ -142,7 +142,6 @@ static void nn_worker_routine (void *arg)
     struct nn_worker_task *task;
     struct nn_worker_op *op;
     OVERLAPPED_ENTRY entries [NN_WORKER_MAX_EVENTS];
-	DWORD win_err;
 
     self = (struct nn_worker*) arg;
 
