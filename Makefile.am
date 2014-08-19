@@ -432,6 +432,7 @@ TRANSPORT_TESTS = \
     tests/ipc_shutdown \
     tests/ipc_flood \
     tests/ipc_pub_disconnect \
+    tests/ipc_pub_nopeers \
     tests/tcp \
     tests/tcp_shutdown
 
