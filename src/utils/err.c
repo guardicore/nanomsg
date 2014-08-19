@@ -186,8 +186,7 @@ void nn_win_error (int err, char *buf, size_t bufsize)
 
 #endif
 
-#if 0
-
+/* Implement your own nn_err_log to receive nanomsg error messages in your application. */
 void nn_err_log ( const char * fmt, ... ) {
 	va_list argp;
 	va_start (argp, fmt);
@@ -195,5 +194,3 @@ void nn_err_log ( const char * fmt, ... ) {
 	va_end (argp);
 	fflush (stderr);
 }
-
-#endif
