@@ -73,6 +73,7 @@ add_libnanomsg_test (ipc)
 add_libnanomsg_test (ipc_shutdown)
 add_libnanomsg_test (ipc_flood)
 add_libnanomsg_test (ipc_pub_disconnect)
+add_libnanomsg_test (ipc_pub_nopeers)
 add_libnanomsg_test (tcp)
 add_libnanomsg_test (tcp_shutdown)
 
