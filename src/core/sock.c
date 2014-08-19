@@ -589,29 +589,6 @@ int nn_sock_send (struct nn_sock *self, struct nn_msg *msg, int flags)
             return -EAGAIN;
         }
 
-		/* Lacking a test case of what this fixes. Enabled causes a deadlock, disable doesn't break any tests. (TTimo) */
-#if 0
-		/* Check number of current connections so we don't wait forever. */
-		if (nn_slow (self->statistics.current_connections == 0)) {
-			fprintf (stderr, "nn_send: -EAGAIN, no connections\n");
-#if 0
-			/* This is causing the ipc test to deadlock on my system. (TTimo) */
-			nn_msg_term (msg); /* deallocate the message. */
-			nn_ctx_leave (&self->ctx);
-			errno = ENOTCONN; /* really have to look for a proper error code to return since ENOTCONN might be misunderstood to a the sending socket to be not connected. */
-			return 0;
-#elif 0
-			/*
-				Doing this makes the nn_send fail 'cleanly',
-				But breaks the ability to push data to a sub before a pub would connect?
-				- TTimo
-			*/
-			nn_ctx_leave (&self->ctx);
-			return -ENOTCONN;
-#endif
-		}
-#endif
-
         /*  With blocking send, wait while there are new pipes available
             for sending. */
         nn_ctx_leave (&self->ctx);
@@ -629,6 +606,15 @@ int nn_sock_send (struct nn_sock *self, struct nn_msg *msg, int flags)
         if (self->sndtimeo >= 0) {
             now = nn_clock_now (&self->clock);
             timeout = (int) (now > deadline ? 0 : deadline - now);
+
+            if (nn_slow (self->statistics.current_connections == 0 && timeout == 0)) {
+                /*
+                    The send timeout has expired, and there is no peer to send to.
+                    nn_efd_wait will never return -ETIMEDOUT with no peers, so let's exit ourselves.
+                */
+                nn_ctx_leave (&self->ctx);
+                return -ENOTCONN;
+            }
         }
     }
 }
