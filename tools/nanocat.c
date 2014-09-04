@@ -587,6 +587,14 @@ void nn_resp_loop (nn_options_t *options, int sock)
     }
 }
 
+void nn_err_log ( const char * fmt, ... ) {
+	va_list argp;
+	va_start (argp, fmt);
+	vfprintf (stderr, fmt, argp);
+	va_end (argp);
+	fflush (stderr);
+}
+
 int main (int argc, char **argv)
 {
     int sock;
