@@ -395,6 +395,23 @@ NN_EXPORT int nn_poll (struct nn_pollfd *fds, int nfds, int timeout);
 
 NN_EXPORT int nn_device (int s1, int s2);
 
+/******************************************************************************/
+/*  Socket Stat Query.			                                              */
+/******************************************************************************/
+
+#define NN_STAT_QUERY_ESTABLISHED_CONNECTIONS 1
+#define NN_STAT_QUERY_ACCEPTED_CONNECTIONS    2
+#define NN_STAT_QUERY_DROPPED_CONNECTIONS     3
+#define NN_STAT_QUERY_BROKEN_CONNECTIONS      4
+#define NN_STAT_QUERY_CONNECT_ERRORS          5
+#define NN_STAT_QUERY_BIND_ERRORS             6
+#define NN_STAT_QUERY_ACCEPT_ERRORS           7
+#define NN_STAT_QUERY_CURRENT_CONNECTIONS     8
+#define NN_STAT_QUERY_INPROGRESS_CONNECTIONS  9
+#define NN_STAT_QUERY_CURRENT_EP_ERRORS       10
+
+NN_EXPORT int nn_getsocketstats(int s, int stat);
+
 #undef NN_EXPORT
 
 #ifdef __cplusplus

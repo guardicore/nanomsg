@@ -849,6 +849,48 @@ int nn_recvmsg (int s, struct nn_msghdr *msghdr, int flags)
     return (int) sz;
 }
 
+int nn_getsocketstats(int s, int stat)
+{
+	struct nn_sock *sock = self.socks [s];
+	int ret = 0;
+	if (!sock)
+		return ret;
+	switch(stat){
+	case NN_STAT_QUERY_ESTABLISHED_CONNECTIONS:
+		ret = sock->statistics.established_connections;
+		break;
+	case NN_STAT_QUERY_ACCEPTED_CONNECTIONS:
+		ret = sock->statistics.accepted_connections;
+		break;
+	case NN_STAT_QUERY_DROPPED_CONNECTIONS:
+		ret = sock->statistics.dropped_connections;
+		break;
+	case NN_STAT_QUERY_BROKEN_CONNECTIONS:
+		ret = sock->statistics.broken_connections;
+		break;
+	case NN_STAT_QUERY_CONNECT_ERRORS:
+		ret = sock->statistics.connect_errors;
+		break;
+	case NN_STAT_QUERY_BIND_ERRORS:
+		ret = sock->statistics.bind_errors;
+		break;
+	case NN_STAT_QUERY_ACCEPT_ERRORS:
+		ret = sock->statistics.accept_errors;
+		break;
+	case NN_STAT_QUERY_CURRENT_CONNECTIONS:
+		ret = sock->statistics.current_connections;
+		break;
+	case NN_STAT_QUERY_INPROGRESS_CONNECTIONS:
+		ret = sock->statistics.inprogress_connections;
+		break;
+	case NN_STAT_QUERY_CURRENT_EP_ERRORS:
+		ret = sock->statistics.current_ep_errors;
+		break;
+	}
+
+	return ret;
+}
+
 static void nn_global_add_transport (struct nn_transport *transport)
 {
     if (transport->init)
