@@ -54,6 +54,8 @@ set (NN_SOURCES
     ../src/aio/ctx.c
     ../src/aio/fsm.h
     ../src/aio/fsm.c
+    ../src/aio/iocp.h
+    ../src/aio/iocp.c
     ../src/aio/poller.h
     ../src/aio/poller.c
     ../src/aio/poller_epoll.h
