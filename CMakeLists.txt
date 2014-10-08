@@ -47,8 +47,9 @@ endif ()
 #  Build the library itself.
 
 add_subdirectory (src)
-add_subdirectory (nanomsg_std)
-add_subdirectory (nanomsg64_std)
+# TTimo - see PORT-272, we maintain an out of tree set of MSVC 2010 project manually
+#add_subdirectory (nanomsg_std)
+#add_subdirectory (nanomsg64_std)
 
 #  Build the tools
 
