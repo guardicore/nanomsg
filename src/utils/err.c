@@ -186,7 +186,7 @@ void nn_win_error (int err, char *buf, size_t bufsize)
 
 #endif
 
-nn_err_log_callback_t err_log_callback = NULL;
+static nn_err_log_callback_t err_log_callback = NULL;
 
 void nn_err_log ( const char * fmt, ... ) {
     va_list argp;
