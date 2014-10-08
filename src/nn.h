@@ -30,6 +30,7 @@ extern "C" {
 
 #include <errno.h>
 #include <stddef.h>
+#include <stdarg.h>
 
 /*  TTimo - Static link - best to force this for now for external programs. */
 #if defined _WIN32
