@@ -536,10 +536,11 @@ DWORD nn_usock_open_pipe (struct nn_usock *self, const char *name)
         fullname,
         GENERIC_READ | GENERIC_WRITE,
         0,
-        NULL,
+        &self->sec_attr,
         OPEN_ALWAYS,
         FILE_FLAG_OVERLAPPED,
-        &self->sec_attr);
+        0
+        );
 
     if (self->p == INVALID_HANDLE_VALUE)
         return GetLastError ();
