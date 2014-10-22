@@ -608,8 +608,6 @@ int nn_sock_send (struct nn_sock *self, struct nn_msg *msg, int flags)
             return rc;
         }
 
-		nn_assert (rc == -EAGAIN);
-
         /*  If the message cannot be sent at the moment and the send call
             is non-blocking, return immediately. */
         if (nn_fast (flags & NN_DONTWAIT)) {
