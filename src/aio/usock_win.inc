@@ -981,6 +981,12 @@ static void nn_usock_handler (struct nn_fsm *self, int src, int type,
 
                 return;
 
+            case NN_WORKER_OP_ERROR:
+                nn_assert (!nn_isvistaplus());
+                nn_usock_close (usock);
+                usock->state = NN_USOCK_STATE_DONE;
+                return;
+
             default:
                 nn_fsm_bad_action (usock->state, src, type);
             }
