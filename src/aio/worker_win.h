@@ -57,7 +57,6 @@ int nn_worker_op_isidle (struct nn_worker_op *self);
 void nn_worker_cancelio(struct nn_worker *self, HANDLE p);
 struct nn_worker {
     HANDLE cp;
-	HANDLE p;
     struct nn_timerset timerset;
     struct nn_thread thread;
 };

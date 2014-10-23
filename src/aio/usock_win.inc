@@ -492,7 +492,6 @@ static void nn_usock_create_io_completion (struct nn_usock *self)
 		(ULONG_PTR) NULL,
 		0);
     nn_assert(cp);
-	worker->p = self->p;
 }
 
 static void nn_usock_create_pipe (struct nn_usock *self, const char *name)
