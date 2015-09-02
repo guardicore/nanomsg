@@ -79,6 +79,7 @@ add_libnanomsg_test (tcp)
 add_libnanomsg_test (tcp_shutdown)
 
 add_libnanomsg_test (ipc_xp_test)
+add_libnanomsg_test (ipc_xp_thread)
 
 #  Protocol tests.
 add_libnanomsg_test (pair)
