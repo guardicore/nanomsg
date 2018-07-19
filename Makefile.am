@@ -92,7 +92,9 @@ NANOMSG_AIO = \
     src/aio/worker_posix.h \
     src/aio/worker_posix.inc \
     src/aio/worker_win.h \
-    src/aio/worker_win.inc
+    src/aio/worker_win.inc \
+    src/aio/iocp.c \
+    src/aio/iocp.h
 
 NANOMSG_UTILS = \
     src/utils/alloc.h \
@@ -338,7 +340,10 @@ libnanomsg_la_SOURCES = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libnanomsg.pc
 
-libnanomsg_la_LDFLAGS = -no-undefined -version-info @NN_LIBTOOL_VERSION@
+# We do not really want to name our dll like libnanomsg-0.dll
+# libnanomsg_la_LDFLAGS = -no-undefined -version-info @NN_LIBTOOL_VERSION@
+libnanomsg_la_LDFLAGS = -no-undefined
+
 libnanomsg_la_CFLAGS = -DNN_EXPORTS
 
 ################################################################################

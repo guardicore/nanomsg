@@ -26,6 +26,13 @@
 
 #include <string.h>
 
+/* In case of _WIN32_WINNT_WIN2K we should 
+   include wspiapi for getaddrinfo/freeaddrinfo methods */
+#if !defined(NN_HAVE_GETADDRINFO_A) && (_WIN32_WINNT < _WIN32_WINNT_WINXP)
+#include <ws2tcpip.h>
+#include <wspiapi.h>
+#endif
+
 int nn_dns_check_hostname (const char *name, size_t namelen)
 {
     int labelsz;

@@ -227,8 +227,15 @@ AS_CASE([${host_os}],
     [*mingw32*], [
         AC_DEFINE([NN_HAVE_WINDOWS])
         AC_DEFINE([NN_HAVE_MINGW])
-        AC_DEFINE([_WIN32_WINNT],0x0600)
-        LIBS="$LIBS -lws2_32 -lMswsock"
+        AC_ARG_ENABLE([win2k-support],
+            AS_HELP_STRING([--enable-win2k-support], [Enable Windows 2000 support [default=yes]])
+        )
+        if test "x$enable_win2k_support" = "xno"; then
+            AC_DEFINE([_WIN32_WINNT],0x0501)
+        else
+            AC_DEFINE([_WIN32_WINNT],0x0500)
+        fi
+        LIBS="$LIBS -lws2_32 -lmswsock"
     ],
     [*darwin*],  [AC_DEFINE([NN_HAVE_OSX])],
     [*freebsd*], [AC_DEFINE([NN_HAVE_FREEBSD])],
