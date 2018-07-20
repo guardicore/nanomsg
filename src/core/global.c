@@ -78,10 +78,7 @@
 #include <string.h>
 #include <time.h>
 
-#if defined NN_HAVE_MINGW
-#include <pthread.h>
-#define gmtime_r(ptr_numtime, ptr_strtime) gmtime_s(ptr_strtime, ptr_numtime)
-#elif defined NN_HAVE_WINDOWS
+#if defined NN_HAVE_WINDOWS
 #define gmtime_r(ptr_numtime, ptr_strtime) gmtime_s(ptr_strtime, ptr_numtime)
 #endif
 #define NN_HAVE_GMTIME_R
