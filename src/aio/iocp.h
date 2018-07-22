@@ -27,7 +27,11 @@
 
 #include "../utils/win.h"
 
+#if defined NN_HAVE_MINGW
+typedef LONG NTSTATUS;
+#else
 typedef __success(return >= 0) LONG NTSTATUS;
+#endif
 typedef NTSTATUS *PNTSTATUS;
 
 typedef struct _IO_STATUS_BLOCK
