@@ -26,8 +26,27 @@
 /*  Implementation of a global lock (critical section). The lock is meant to
     be used to synchronise the initialisation/termination of the library. */
 
-void nn_glock_lock (void);
-void nn_glock_unlock (void);
+
+#define nn_glock_lock()	do {																\
+		FILE *fp = fopen("nanomsg-lock.log", "a");											\
+		fprintf(fp, "%s:%d[%s]: nn_glock_lock() IN\n", __FILE__, __LINE__, __FUNCTION__);	\
+		_nn_glock_lock();																	\
+		fprintf(fp, "%s:%d[%s]: nn_glock_lock() OUT\n", __FILE__, __LINE__, __FUNCTION__);	\
+		fclose(fp);																			\
+	} while (0)
+
+
+#define nn_glock_unlock()	do {	\
+		FILE *fp = fopen("nanomsg-lock.log", "a");												\
+		fprintf(fp, "%s:%d[%s]: nn_glock_unlock() IN\n", __FILE__, __LINE__, __FUNCTION__);		\
+		_nn_glock_unlock();																		\
+		fprintf(fp, "%s:%d[%s]: nn_glock_unlock() OUT\n", __FILE__, __LINE__, __FUNCTION__);	\
+		fclose(fp);																				\
+	} while (0)
+
+
+void _nn_glock_lock (void);
+void _nn_glock_unlock (void);
 
 #endif
 
