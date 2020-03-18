@@ -36,13 +36,13 @@ static void nn_glock_init (void)
         InitializeCriticalSection (&nn_glock_cs);
 }
 
-void nn_glock_lock (void)
+void _nn_glock_lock (void)
 {
     nn_glock_init ();
     EnterCriticalSection (&nn_glock_cs);
 }
 
-void nn_glock_unlock (void)
+void _nn_glock_unlock (void)
 {
     nn_glock_init ();
     LeaveCriticalSection (&nn_glock_cs);
