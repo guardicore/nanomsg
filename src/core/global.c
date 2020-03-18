@@ -1112,60 +1112,6 @@ static void nn_global_submit_errors (int i, struct nn_sock *s,
     }
 }
 
-static void nn_global_submit_statistics ()
-{
-    int i;
-    struct nn_sock *s;
-
-    /*  TODO(tailhook)  optimized it to use nsocks and unused  */
-    for(i = 0; i < NN_MAX_SOCKETS; ++i) {
-
-        nn_glock_lock ();
-        s = self.socks [i];
-        if (!s) {
-            nn_glock_unlock ();
-            continue;
-        }
-        if (i == self.statistics_socket) {
-            nn_glock_unlock ();
-            continue;
-        }
-        nn_ctx_enter (&s->ctx);
-        nn_glock_unlock ();
-
-        nn_global_submit_counter (i, s,
-            "established_connections", s->statistics.established_connections);
-        nn_global_submit_counter (i, s,
-            "accepted_connections", s->statistics.accepted_connections);
-        nn_global_submit_counter (i, s,
-            "dropped_connections", s->statistics.dropped_connections);
-        nn_global_submit_counter (i, s,
-            "broken_connections", s->statistics.broken_connections);
-        nn_global_submit_counter (i, s,
-            "connect_errors", s->statistics.connect_errors);
-        nn_global_submit_counter (i, s,
-            "bind_errors", s->statistics.bind_errors);
-        nn_global_submit_counter (i, s,
-            "accept_errors", s->statistics.accept_errors);
-        nn_global_submit_counter (i, s,
-            "messages_sent", s->statistics.messages_sent);
-        nn_global_submit_counter (i, s,
-            "messages_received", s->statistics.messages_received);
-        nn_global_submit_counter (i, s,
-            "bytes_sent", s->statistics.bytes_sent);
-        nn_global_submit_counter (i, s,
-            "bytes_received", s->statistics.bytes_received);
-        nn_global_submit_level (i, s,
-            "current_connections", s->statistics.current_connections);
-        nn_global_submit_level (i, s,
-            "inprogress_connections", s->statistics.inprogress_connections);
-        nn_global_submit_level (i, s,
-            "current_snd_priority", s->statistics.current_snd_priority);
-        nn_global_submit_errors (i, s,
-            "current_ep_errors", s->statistics.current_ep_errors);
-        nn_ctx_leave (&s->ctx);
-    }
-}
 
 static int nn_global_create_ep (int s, const char *addr, int bind)
 {
@@ -1285,7 +1231,6 @@ static void nn_global_handler (struct nn_fsm *self,
         case NN_GLOBAL_SRC_STAT_TIMER:
             switch (type) {
             case NN_TIMER_TIMEOUT:
-                nn_global_submit_statistics ();
                 /*  No need to change state  */
                 nn_timer_stop (&global->stat_timer);
                 return;

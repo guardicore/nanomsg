@@ -293,7 +293,7 @@ void nn_usock_accept (struct nn_usock *self, struct nn_usock *listener)
     /*  Wait for the incoming connection. */
     memset (&listener->in.olpd, 0, sizeof (listener->in.olpd));
     brc = AcceptEx (listener->s, self->s, listener->ainfo, 0, 256, 256, &nbytes,
-        &listener->in.olpd);
+					&listener->in.olpd);
 
     /*  Immediate success. */
     if (nn_fast (brc == TRUE)) {

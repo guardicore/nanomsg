@@ -27,23 +27,32 @@
     be used to synchronise the initialisation/termination of the library. */
 
 
-#define nn_glock_lock()	do {																\
-		FILE *fp = fopen("nanomsg-lock.log", "a");											\
-		fprintf(fp, "%s:%d[%s]: nn_glock_lock() IN\n", __FILE__, __LINE__, __FUNCTION__);	\
+#ifdef GLOBCAL_LOCK_DBG
+#define nn_glock_lock()	do {															        	\
+        DWORD pid = GetCurrentProcessId();                                                          \
+		FILE *fp = fopen("nanomsg-lock.log", "a");											        \
+		fprintf(fp, "pid=%d:%s:%d[%s]: nn_glock_lock() IN\n", pid, __FILE__, __LINE__, __FUNCTION__);	\
 		_nn_glock_lock();																	\
-		fprintf(fp, "%s:%d[%s]: nn_glock_lock() OUT\n", __FILE__, __LINE__, __FUNCTION__);	\
+		fprintf(fp, "pid=%d:%s:%d[%s]: nn_glock_lock() OUT\n", pid, __FILE__, __LINE__, __FUNCTION__);	\
 		fclose(fp);																			\
 	} while (0)
 
 
-#define nn_glock_unlock()	do {	\
-		FILE *fp = fopen("nanomsg-lock.log", "a");												\
-		fprintf(fp, "%s:%d[%s]: nn_glock_unlock() IN\n", __FILE__, __LINE__, __FUNCTION__);		\
-		_nn_glock_unlock();																		\
-		fprintf(fp, "%s:%d[%s]: nn_glock_unlock() OUT\n", __FILE__, __LINE__, __FUNCTION__);	\
-		fclose(fp);																				\
+#define nn_glock_unlock()	do {	                                                                \
+		FILE *fp = fopen("nanomsg-lock.log", "a");												    \
+        DWORD pid = GetCurrentProcessId();                                                          \
+		fprintf(fp, "pid=%d:%s:%d[%s]: nn_glock_unlock() IN\n", pid, __FILE__, __LINE__, __FUNCTION__);	\
+		_nn_glock_unlock();																		    \
+		fprintf(fp, "pid=%d:%s:%d[%s]: nn_glock_unlock() OUT\n", pid, __FILE__, __LINE__, __FUNCTION__);	\
+		fclose(fp);																				    \
 	} while (0)
 
+#else
+
+#define nn_glock_lock()	_nn_glock_lock()
+#define nn_glock_unlock()	_nn_glock_unlock()
+
+#endif
 
 void _nn_glock_lock (void);
 void _nn_glock_unlock (void);
